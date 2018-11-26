@@ -1,0 +1,26 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/dronetheme.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+a {
+  color: #00B7FF;
+}
+.red{
+  color:red;
+}
+.blue{
+  color:blue;
+}
+li{
+  position: relative;
+}
+li span{
+  position: absolute;
+  left: 300px;
+  cursor: pointer;
+}

@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/signin.css')
+    script(type="text/javascript" src="/javascripts/signupjs.js")
+    form.form-signin.text-center(action='/signup/submit' method='post' style='background:#E4EBF8;border-radius:15px')
+        h1.h3.mb-3.font-weight-normal= title
+        table
+            tr
+            td= 'Username'
+            td
+                input#username.form-control(type='text' name='username' placeholder='Username')
+            tr
+            td= 'Password'
+            td
+                input#password.form-control(type='password' name='password' placeholder='Password')
+            tr
+            td= 'Role'
+            td
+                select#role.form-control(name='role')
+                    option(value='user')= 'User'
+                    option(value='admin')= 'Admin'
+                    option(value='supervisor')= 'Supervisor'
+            tr
+            td= 'Company'
+            td
+                select#company.form-control(name='company')
+                    option(value='1')= 'Amazon'
+                    option(value='2')= 'Yelp'
+                    option(value='3')= 'Ricepo'
+            tr
+            td= 'Photo'
+            td
+                input#file.form-control(type='file' name='file' onchange='ajaxFileUpload()')
+                input#purl(type='hidden' name='purl')
+            tr
+                p#err(style='color:red')
+            tr
+                img#img(src='' width='150' height='150' style='display:none')
+
+        button.btn.btn-primary(type='submit')= 'SUBMIT'
+        br
+        a(href='#' onclick='javascript:history.back(-1)')= 'Return'
