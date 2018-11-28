@@ -26,6 +26,7 @@ $(function () {
             success: function(data){
                 setDrones(data);
                 setWeather(data);
+                setTasks(data);
                 var points = data.points;
                 // console.log(points);
                 for(var p in points){
@@ -73,6 +74,18 @@ function setWeather(data){
         wdv.append('<p>'+wea[w].name+'</p>');
         wdv.append('<img src="'
             +wea[w].address+'" width=200px height=150px />');
+    }
+}
+function setTasks(data) {
+    var task = $('#tasks>tbody');
+    task.html('');
+    var tsks = data.task;
+    for(var t in tsks){
+        task.append('<tr>' +
+            '<td>'+ tsks[t].ID +'</td>' +
+            '<td>'+ tsks[t].Startpoint +'</td>' +
+            '<td>'+ tsks[t].Endpoint +'</td>' +
+            '</tr>');
     }
 }
 function icongen(height) {
