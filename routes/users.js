@@ -63,8 +63,9 @@ router.get('/data', function(req, res, next) {
     // });
 
     var sql = 'select * from drones where company_id = ?';
+    var tsql = 'select task_id,drone_id,task_datetime,cargo_id,ongoing,task_notes from tasks where company_id = ?';
     (async () => {
-        let task = await row('select * from tasks where company_id = ?',company_id);
+        let task = await row(tsql,company_id);
         drones = await row(sql,company_id);
         let data = {
             drones: drones,

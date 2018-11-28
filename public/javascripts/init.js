@@ -82,9 +82,12 @@ function setTasks(data) {
     var tsks = data.task;
     for(var t in tsks){
         task.append('<tr>' +
-            '<td>'+ tsks[t].ID +'</td>' +
-            '<td>'+ tsks[t].Startpoint +'</td>' +
-            '<td>'+ tsks[t].Endpoint +'</td>' +
+            '<td>'+ tsks[t].task_id +'</td>' +
+            '<td>'+ tsks[t].drone_id +'</td>' +
+            '<td>'+ tsks[t].task_datetime +'</td>' +
+            '<td>'+ tsks[t].cargo_id +'</td>' +
+            '<td>'+ tsks[t].ongoing +'</td>' +
+            '<td>'+ tsks[t].task_notes +'</td>' +
             '</tr>');
     }
 }

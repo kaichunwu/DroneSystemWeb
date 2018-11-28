@@ -11,13 +11,14 @@ html
         nav.navbar.navbar-expand-sm.navbar-light(role='navigation' style='background-color: #136299;')
             div.container-fluid
                 ul.navbar-nav
-                    li.nav-item= 'Drone Map'
+                    li.nav-item(style='color: red')= 'Drone Map'
                 ul.nav.navbar-right
                     div.dropdown
                         button.btn.btn-secondary.dpdmenu(data-toggle='dropdown' onclick='opt()')
                             img(width='20' height='20' src=`${user.purl}`)
                             span= user.username
                         div.dropdown-menu.dropdown-menu-right#text(role='menu' style='display:none')
+                            a.dropdown-item(href='/')= 'Main Page'
                             a.dropdown-item(href='/users')= 'Company Drones Map'
                             a.dropdown-item(href='/logout')= 'Logout here'
         div.container-fluid(style='top:1rem;bottom:0')
@@ -47,27 +48,30 @@ html
                     table.tab-content#tasks
                         thead
                             tr
-                                th= 'ID'
-                                th= 'Start'
-                                th= 'End'
+                                th= 'task'
+                                th= 'drone'
+                                th= 'datetime'
+                                th= 'cargo'
+                                th= 'ongoing'
+                                th= 'notes'
                         tbody(style='height:120px')
                             tr
                                 td= 12
-                                td= '(2,2)'
-                                td= '(3,3)'
+                                td= 1
+                                td= '2018'
                             tr
                                 td= 13
-                                td= '(2,2)'
-                                td= '(3,3)'
+                                td= 2
+                                td= '2018'
                             tr
                                 td= 14
-                                td= '(2,2)'
-                                td= '(3,3)'
+                                td= 3
+                                td= '2018'
                             tr
                                 td= 15
-                                td= '(2,2)'
-                                td= '(3,3)'
+                                td= 4
+                                td= '2018'
                             tr
                                 td= 16
-                                td= '(2,2)'
-                                td= '(3,3)'
+                                td= 5
+                                td= '2018'
