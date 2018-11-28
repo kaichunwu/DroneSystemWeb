@@ -40,7 +40,7 @@ $(function () {
                             path: google.maps.SymbolPath.CIRCLE,
                             fillColor: color,
                             fillOpacity: .9,
-                            scale: Math.pow(2, 3) / 2,
+                            scale: Math.pow(2, 3) * points[p].height / 1000,
                             strokeColor: color,
                             strokeWeight: .5
                         }
