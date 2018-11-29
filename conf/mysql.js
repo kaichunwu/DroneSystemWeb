@@ -32,7 +32,7 @@ var pool = mysql.createPool({
 var acl = require('./acl');
 pool.query('select * from user',function(error, results, fields){
     if(error) throw error;
-    console.log(results);
+    //console.log(results);
     for(var i in results){
         acl.addUserRoles(results[i].username,results[i].role);
     }

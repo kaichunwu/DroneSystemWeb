@@ -29,14 +29,14 @@ $(function(){
         'width': '100%',
         'z-index': 999
     };
-    var div = $("<div style='padding: 0.5rem 1rem;'><p>&ensp;</p></div>");
+    var div = $("<div style='padding: 1px 1px;'><p>&ensp;</p></div>");
     win.scroll(function(){
-        if(sc.scrollTop()>=300){
+        if(sc.scrollTop()>=0){
             div.insertBefore(nav);
             nav.css(css);
         }else{
             div.remove();
-            nav.attr("style","background-color: #136299;");
+            nav.attr("style","background-color: #1a73e8;");
         }
     });
 });

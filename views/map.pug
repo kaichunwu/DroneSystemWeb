@@ -8,10 +8,10 @@ html
         script(type="text/javascript" src="/javascripts/jquery-3.3.1.js")
         script(type="text/javascript" src="/javascripts/nav.js")
     body
-        nav.navbar.navbar-expand-sm.navbar-light(role='navigation' style='background-color: #136299;')
+        nav.navbar.navbar-expand-sm.navbar-light(role='navigation' style='background-color: #1a73e8;')
             div.container-fluid
                 ul.navbar-nav
-                    li.nav-item(style='color: red')= 'Drone Map'
+                    li.nav-item(style='color: white')= 'Drone Map'
                 ul.nav.navbar-right
                     div.dropdown
                         button.btn.btn-secondary.dpdmenu(data-toggle='dropdown' onclick='opt()')
@@ -19,7 +19,7 @@ html
                             span= user.username
                         div.dropdown-menu.dropdown-menu-right#text(role='menu' style='display:none')
                             a.dropdown-item(href='/')= 'Main Page'
-                            a.dropdown-item(href='/users')= 'Company Drones Map'
+                            a.dropdown-item(href='/users/addTask')= 'Add Task'
                             a.dropdown-item(href='/logout')= 'Logout here'
         div.container-fluid(style='top:1rem;bottom:0')
             div.row
@@ -59,19 +59,34 @@ html
                                 td= 12
                                 td= 1
                                 td= '2018'
+                                td= 1
+                                td= 1
+                                td= 'note'
                             tr
                                 td= 13
                                 td= 2
                                 td= '2018'
+                                td= 1
+                                td= 1
+                                td= 'note'
                             tr
                                 td= 14
                                 td= 3
                                 td= '2018'
+                                td= 1
+                                td= 1
+                                td= 'note'
                             tr
                                 td= 15
                                 td= 4
                                 td= '2018'
+                                td= 1
+                                td= 1
+                                td= 'note'
                             tr
                                 td= 16
                                 td= 5
                                 td= '2018'
+                                td= 1
+                                td= 1
+                                td= 'note'
