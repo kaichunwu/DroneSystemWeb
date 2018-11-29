@@ -1,0 +1,31 @@
+#bot table{
+    overflow-x: scroll;
+    font-size: small;
+    border-collapse: collapse;
+    text-align: center;
+    /*border-spacing: 0px 5px;*/
+}
+#bot table>thead>tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+#bot table>tbody{
+    display: block;
+    height: 580px;
+    overflow-y: auto;
+}
+#bot table>tbody>tr{
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.drone{
+    overflow-x: auto;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    font-size: small;
+    text-align: center;
+}

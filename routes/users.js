@@ -62,11 +62,12 @@ router.get('/data', function(req, res, next) {
     //     res.send(data);
     // });
 
-    var sql = 'select * from drones where company_id = ?';
+    var sql = 'select * from drones_tracker dt where dt.drone_id in (select d.drone_id from drones d where d.company_id = ?)';
     var tsql = 'select task_id,drone_id,task_datetime,cargo_id,ongoing,task_notes from tasks where company_id = ?';
     (async () => {
         let task = await row(tsql,company_id);
         drones = await row(sql,company_id);
+        //console.log(drones);
         let data = {
             drones: drones,
             points: drones,

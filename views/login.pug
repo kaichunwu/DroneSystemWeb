@@ -18,6 +18,9 @@ block content
                 button.btn.btn-primary(type='submit')= 'LOG IN'
             br
         span.mt-5.mb-3.text-muted= "If you don't have account. Please "
-            a(href='/signup')= 'Create an account Here.'
+        br
+        a(href='/signup')= 'Create an account Here'
+        span.mt-5.mb-3.text-muted= ' or '
+        a(href='/')= 'Customer Login'
         if err
             p #{err}

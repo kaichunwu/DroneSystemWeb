@@ -32,7 +32,7 @@ $(function () {
                 for(var p in points){
                     // console.log(points[p].lat+' '+points[p].lng);
                     // psp.append('<span style="top:'+points[p].top+'px;left:'+points[p].left+'px"'+'>'+'.'+'</span>');
-                    var latLng = new google.maps.LatLng(points[p].lat,points[p].lng);
+                    var latLng = new google.maps.LatLng(points[p].latitude,points[p].longitude);
                     var color = icongen(points[p].height);
                     var marker = new google.maps.Marker({
                         position: latLng,
@@ -60,9 +60,11 @@ function setDrones(data){
         // console.log(d);
         dtb.append('<tr>'
             +'<td>'+drones[d].drone_id+'</td>'
-            +'<td>'+drones[d].Speed+'</td>'
-            +'<td>'+drones[d].lat+'</td>'
-            +'<td>'+drones[d].lng+'</td>'
+            +'<td>'+drones[d].task_id+'</td>'
+            +'<td>'+drones[d].height+'</td>'
+            +'<td>'+drones[d].speed_horizontal+'</td>'
+            +'<td>'+drones[d].speed_vertical+'</td>'
+            +'<td>'+drones[d].direction+'</td>'
             +'</tr>');
     }
 }

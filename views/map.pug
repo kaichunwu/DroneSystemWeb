@@ -4,7 +4,7 @@ html
         title= 'MAP'
         link(rel='SHORTCUT ICON' href='/images/droneicon.jpg')
         link(rel='stylesheet', href='/stylesheets/bootstrap.css')
-        link(rel='stylesheet', href='/stylesheets/map.css')
+        link(rel='stylesheet', href='/stylesheets/table.css')
         script(type="text/javascript" src="/javascripts/jquery-3.3.1.js")
         script(type="text/javascript" src="/javascripts/nav.js")
     body
@@ -25,14 +25,17 @@ html
             div.row
                 div.col-md-2
                     h1= 'Drone'
-                    table
-                        thead
-                            tr
-                                th= 'ID'
-                                th= 'Speed'
-                                th= 'Latitude'
-                                th= 'Longitude'
-                        tbody#drones
+                    div.drone
+                        table(style="min-width:100%;border-collapse:separate;border-spacing:10px 0px;")
+                            thead
+                                tr
+                                    th= 'Drone_ID'
+                                    th= 'Task_ID'
+                                    th= 'Height'
+                                    th= 'Speed_horizontal'
+                                    th= 'Speed_vertical'
+                                    th= 'Direction'
+                            tbody#drones
 
                 div.col-md-8
                     h1= 'Map'
@@ -43,7 +46,7 @@ html
                     h1= 'Weather'
                     div#weather
             div.row
-                div.col-md-12
+                div.col-md-12#bot
                     h1= 'Tasks'
                     table.tab-content#tasks
                         thead

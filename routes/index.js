@@ -6,9 +6,10 @@ router.get('/', function(req, res, next) {
   if(req.session.user){
     res.render('index', { title: 'Drone Control System',user: req.session.user});}
   else{
-    req.session.err = 'login first';
-    res.redirect('login');
-  }
+    //req.session.err = 'login first';
+    //res.redirect('login');
+      res.render('index', { title: 'Drone Control System'});
+    }
 });
 
 router.route('/login').get(function (req,res) {
