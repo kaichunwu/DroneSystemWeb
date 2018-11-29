@@ -33,7 +33,7 @@ $(function () {
                     // console.log(points[p].lat+' '+points[p].lng);
                     // psp.append('<span style="top:'+points[p].top+'px;left:'+points[p].left+'px"'+'>'+'.'+'</span>');
                     var latLng = new google.maps.LatLng(points[p].latitude,points[p].longitude);
-                    var color = icongen(points[p].height);
+                    var color = icongen(points[p].drone_id);
                     var marker = new google.maps.Marker({
                         position: latLng,
                         map: map,
@@ -93,13 +93,17 @@ function setTasks(data) {
             '</tr>');
     }
 }
-function icongen(height) {
-    switch (height) {
-        case 200: return 'red';
-        case 250: return 'orange';
-        case 300: return 'blue';
-        case 350: return 'yellow';
-        case 400: return 'green';
-        default: return 'black';
-    }
+function icongen(drone_id) {
+    // switch (height) {
+    //     case 200: return 'yellow';
+    //     case 250: return 'green';
+    //     case 300: return '#1a73e8';
+    //     case 350: return 'orange';
+    //     case 400: return 'red';
+    //     default: return 'black';
+    // }
+    var r = Math.floor(drone_id*1000%256);
+    var g = Math.floor(drone_id*2000%256);
+    var b = Math.floor(drone_id*3000%256);
+    return "rgb("+r+','+g+','+b+")";
 }
