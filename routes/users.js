@@ -90,5 +90,35 @@ router.get('/data', function(req, res, next) {
     // if(index<7) index++;
 });
 
+router.get('/addTask',function (req, res, next) {
+    res.render('addTask',{title: 'Add Drones Task',user: req.session.user});
+})
+
+var timestamp = require('../conf/timestamp');
+router.post('/submitTask',function (req, res, next) {
+    var timestamps = timestamp();
+    var task = [
+        req.body.droneid,
+        timestamps,
+        req.body.tlat,
+        req.body.tlng,
+        req.body.tad,
+        req.body.tpo,
+        req.body.llat,
+        req.body.llng,
+        req.body.lad,
+        req.body.lpo,
+        req.body.cargoid,
+        req.body.note,
+        -1
+    ];
+    // console.log(task);
+    var procedure = 'call insertTaskUseDroneIdAndCargoId(?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    (async ()=>{
+        await row(procedure,task);
+        res.render('submitTask',{title: 'Add Successful',user: req.session.user});
+    })();
+})
+
 
 module.exports = router;

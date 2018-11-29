@@ -4,6 +4,8 @@ module.exports = [{
         {resources: ['/'], permissions: ['get','post']},
         {resources: ['/users'], permissions: ['get','post']},
         {resources: ['/users/data'], permissions: ['get','post']},
+        {resources: ['/users/addTask'], permissions: ['get','post']},
+        {resources: ['/users/submitTask'], permissions: ['get','post']},
     ]
 },{
     roles: 'admin',
